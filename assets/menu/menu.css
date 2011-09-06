@@ -1,0 +1,165 @@
+/**
+ *********************************************
+ * Prototype of styles for horizontal CSS-menu
+ * @data 30.06.2009
+ *********************************************
+ * (X)HTML-scheme:
+ *  <div id="menu">
+ *      <ul class="menu">
+ *          <li><a href="#" class="parent"><span>level 1</span></a>
+ *              <div><ul>
+ *                  <li><a href="#" class="parent"><span>level 2</span></a>
+ *                      <div><ul><li><a href="#"><span>level 3</span></a></li></ul></div>
+ *                  </li>
+ *              </ul></div>
+ *          </li>
+ *          <li class="last"><a href="#"><span>level 1</span></a></li>
+ *      </ul>
+ *  </div>
+ *********************************************
+ */
+
+/* menu::base */
+div#menu {
+    height:55px;
+    background:url(images/nav-bg.png) repeat-x;
+    _background:url(images/nav-bg.gif) repeat-x;
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+}
+div#menu ul.menu {
+    padding-left: 30px;
+}
+
+div#menu li {
+    position: relative;
+    z-index: 9;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left;
+}
+   
+div#menu li:hover>ul {
+    left: -2px;
+}
+
+div#menu li div {
+    list-style: none;
+    float: left;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 208px;
+    z-index: 11;
+    visibility: hidden;
+    padding: 0 0 9px 7px;
+    _padding: 0 0 9px 3px;
+    background: url(images/submenu-bottom.png) no-repeat 7px bottom;
+    _background-image: url(images/submenu-bottom.gif);
+    margin: 0 0 0 -9px;
+}
+div#menu li:hover>div {
+    visibility: visible;
+}
+
+div#menu li.current a {}
+
+/* menu::level1 */
+div#menu a {
+    position: relative;
+    z-index: 10;
+    height: 55px;
+    display: block;
+    float: left;	
+    padding: 0 10px 0 10px;
+    line-height: 55px;
+    text-decoration: none;
+}
+div#menu span {
+    font: normal 12px 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+    padding-top: 18px;
+    color: #787878;
+    font-weight:bold;
+    text-transform:uppercase;
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;		
+}
+div#menu ul a:hover span {
+    color: #353535;
+}
+
+div#menu li { background: url(images/nav_separator.png) top left no-repeat; }
+div#menu li.last span{
+    background: url(images/nav_separator.png) top right no-repeat;
+    padding: 18px 10px 16px 0;
+}
+
+/* menu::level2 */
+div#menu ul ul li {
+    background: url(images/nav_dropdown_sep.gif) left bottom repeat-x;
+    padding: 4px 0;
+    z-index: 9;	
+}
+div#menu ul ul {
+    z-index: 12;	
+    padding: 0;
+    background: rgb(226,226,226) url(images/nav_dropdown_grad.png) right top no-repeat;
+    margin-top:0px;
+    margin-left:4px;
+    margin-right:5px;
+}
+div#menu ul ul a {
+  	width: 184px;
+	  padding: 0px 7px 3px 8px;
+    height: auto;
+    float: none;
+    display: block;
+    background:none;
+    margin-bottom: 2px;
+    z-index: -1;
+}
+div#menu ul ul a span {
+	  padding: 0 10px 0px 10px;
+    line-height: 20px;
+    color: #454545;
+    font-weight:normal;
+    text-transform: none;
+    background:none;
+}
+div#menu ul ul a:hover {
+    background: url(images/submenu-selected-bottom.gif) no-repeat 8px bottom;
+}
+div#menu ul ul a:hover span {
+    background: url(images/submenu-selected-top.gif) no-repeat 0px 0px;
+    color: #fff;
+}
+
+div#menu ul ul li.last { background: none; }
+div#menu ul ul li {
+    width: 100%;
+}
+
+/* menu::level3 */
+div#menu ul ul div {
+    width: 208px;
+    margin: -50px 0 0 190px !important;
+    height: auto;
+    _padding: 0 0 9px 3px;
+}
+div#menu ul ul ul {
+	_padding-right:1px;
+}
+
+/* lava lamp */
+div#menu li.back {
+}
+div#menu li.back .left {
+}
+
