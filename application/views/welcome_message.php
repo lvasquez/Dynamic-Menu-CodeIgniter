@@ -58,7 +58,7 @@ code {
 <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 <?php
     //echo base_url();
-    echo $this->dynamic_menu->build_menu('1');
+    echo $this->dynamic_menu->build_menu();
 ?>
 <br />
 <p><br />Page rendered in {elapsed_time} seconds</p>
