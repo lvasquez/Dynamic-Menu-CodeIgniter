@@ -62,6 +62,7 @@ code {
 ?>
 <br />
 <p><br />Page rendered in {elapsed_time} seconds</p>
+<p>Created By <a href="https://github.com/InsiteFX">InsiteFX</a></p>
 <p><br /><a href="http://apycom.com/">jQuery Menus by Apycom</a></p>
 </body>
 </html>  
